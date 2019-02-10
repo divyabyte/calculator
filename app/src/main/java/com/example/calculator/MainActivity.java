@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -145,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
-                op1 = Float.parseFloat(editText.getText().toString()); //parseFloat k andr emoty string ja rhi hai, ab emtty hua to isme ayega hi nai
+                op1 = Float.parseFloat(editText.getText().toString());
                 add = true;
                 addHistory(op1+"","+");
                 editText.setText(null);
@@ -221,7 +220,7 @@ public class MainActivity extends AppCompatActivity {
                     String result1 = op1-op2+"";
                     editText.setText(result1);
 
-                    addHistory(op1+"+"+op2, "=");
+                    addHistory(op1+"-"+op2, "=");
                 }
 
                 if(mul)
@@ -230,7 +229,7 @@ public class MainActivity extends AppCompatActivity {
                     String result2 = op1*op2+"";
                     editText.setText(result2);
 
-                    addHistory(op1+"+"+op2, "=");
+                    addHistory(op1+"*"+op2, "=");
                 }
 
                 if(div)
@@ -239,7 +238,7 @@ public class MainActivity extends AppCompatActivity {
                     String result3 = op1/op2+"";
                     editText.setText(result3);
 
-                    addHistory(op1+"+"+op2, "=");
+                    addHistory(op1+"/"+op2, "=");
                 }
 
                 ///Reset all flags to their initial values
@@ -248,6 +247,8 @@ public class MainActivity extends AppCompatActivity {
                 add = sub = mul = div = false;
             }
         });
+
+
 
 
     }
